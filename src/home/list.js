@@ -6,10 +6,11 @@ import CustomCard from '../common/customcard';
 import ListFooter from './listfooter';
 import ListItem from './listitem';
 
-const NewList = () => (
+const List = () => (
   <CustomCard
     containerClass='list-container'
     footer={<ListFooter />}
+    link='/lista'
   >
     <div>
       <p className='title'>Mês</p>
@@ -21,4 +22,4 @@ const NewList = () => (
   </CustomCard>
 );
 
-export default NewList;
+export default List;
