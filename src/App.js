@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import './App.css';
 import Header from './common/header';
 import Home from './home';
-import CreateList from './createlist';
+import CreateList from './createList';
 import store from './store';
 
 const theme = createMuiTheme({

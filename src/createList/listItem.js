@@ -2,8 +2,8 @@ import React from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 import Typography from '@material-ui/core/Typography';
 
-import CustomCard from '../common/customcard';
-import ListItemFooter from './listitemfooter';
+import CustomCard from '../common/customCard';
+import ListItemFooter from './listItemFooter';
 
 const ListItem = () => (
   <CustomCard

@@ -2,9 +2,9 @@ import React from 'react';
 import { faShoppingBasket, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 import './list.css';
-import CustomCard from '../common/customcard';
-import ListFooter from './listfooter';
-import ListItem from './listitem';
+import CustomCard from '../common/customCard';
+import ListFooter from './listFooter';
+import ListItem from './listItem';
 
 const List = () => (
   <CustomCard

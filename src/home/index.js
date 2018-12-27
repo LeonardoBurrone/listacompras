@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './home.css';
-import NewList from './newlist';
+import NewList from './newList';
 import List from './list';
 
 const Home = () => (

@@ -8,7 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Divider from '@material-ui/core/Divider';
 import { Link } from 'react-router-dom';
 
-import './customcard.css';
+import './customCard.css';
 
 const CustomCard = (props) => (
   <div className={props.containerClass}>
