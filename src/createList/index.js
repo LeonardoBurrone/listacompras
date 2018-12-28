@@ -18,7 +18,11 @@ class CreateList extends Component {
         <Form addProduct={this.addProduct} />
 
         <div className='list-items-container'>
-          <ListItem />
+          {
+            this.props.list.items.map(item =>
+              <ListItem key={item.product} item={item} />
+            )
+          }
         </div>
       </div>
     );
