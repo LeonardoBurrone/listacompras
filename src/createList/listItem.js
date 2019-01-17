@@ -5,12 +5,12 @@ import Typography from '@material-ui/core/Typography';
 import CustomCard from '../common/customCard';
 import ListItemFooter from './listItemFooter';
 
-const ListItem = ({item}) => (
+const ListItem = ({item, deleteProduct}) => (
   <CustomCard
     link='#'
     image='https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/200px-A_small_cup_of_coffee.JPG'
     containerClass='list-item'
-    footer={<ListItemFooter total={item.total} />}
+    footer={<ListItemFooter deleteProduct={deleteProduct} item={item} />}
   >
     <div>
       <div className='list-item-header'>

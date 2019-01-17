@@ -20,7 +20,11 @@ class CreateList extends Component {
         <div className='list-items-container'>
           {
             this.props.list.items.map(item =>
-              <ListItem key={item.product} item={item} />
+              <ListItem
+                key={item.id}
+                deleteProduct={this.props.deleteProduct}
+                item={item} 
+              />
             )
           }
         </div>
