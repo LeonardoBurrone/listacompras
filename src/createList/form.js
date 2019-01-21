@@ -8,7 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import { InputAdornment } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
-const units = ['Kilos', 'Litros', 'Unidades'];
+const units = ['Quilos', 'Litros', 'Unidades'];
 
 class Form extends Component {
   state = {
@@ -57,6 +57,7 @@ class Form extends Component {
     const { id, checked } = this.props.form.productToUpdate;
     this.props.updateProduct({product, quantity, unit, price, id, checked}, list);
     this.clearState();
+    this.props.finishUpdate();
   }
 
   clearState = () => {

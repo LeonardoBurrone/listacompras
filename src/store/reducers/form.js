@@ -7,6 +7,12 @@ const initialState = {
 
 export default function form(state=initialState, action) {
   switch(action.type) {
+    case Types.FINISH_UPDATE:
+      return {
+        action: 'new',
+        productToUpdate: {}
+      };
+
     case Types.START_UPDATE:
       return {
         action: 'update',
