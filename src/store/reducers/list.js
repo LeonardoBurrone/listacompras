@@ -3,6 +3,7 @@ import { v1 as uuid } from 'uuid';
 import { Types } from '../actions/list';
 
 const initialState = {
+  date: '',
   list: null,
   items: [],
 }
@@ -11,6 +12,7 @@ export default function list(state=initialState, action) {
   switch (action.type) {
     case Types.ADD_PRODUCT:
       return {
+        ...state,
         list: action.list,
         items: [
           ...state.items,
@@ -24,6 +26,11 @@ export default function list(state=initialState, action) {
           items: state.items.filter(item => item.id !== action.productId)
         }
 
+      case Types.NEW_LIST:
+        return {
+          ...initialState, date: getDate()
+        }
+
       case Types.TOGGLE_PRODUCT:
         return {
           ...state,
@@ -32,6 +39,7 @@ export default function list(state=initialState, action) {
 
       case Types.UPDATE_PRODUCT:
         return {
+          ...state,
           list: action.list,
           items: updateProduct(state.items, action.product)
         }
@@ -39,6 +47,12 @@ export default function list(state=initialState, action) {
     default:
       return state;
   }
+}
+
+function getDate() {
+  const date = new Date();
+  const options = {year: 'numeric', month: '2-digit', day: '2-digit'};
+  return date.toLocaleDateString('pt-BR', options);
 }
 
 function getItemTotal(product) {
