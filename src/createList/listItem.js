@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import CustomCard from '../common/customCard';
 import ListItemFooter from './listItemFooter';
 
-const ListItem = ({item, deleteProduct}) => (
+const ListItem = ({item, deleteProduct, toggleProduct}) => (
   <CustomCard
     link='#'
     image='https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/200px-A_small_cup_of_coffee.JPG'
@@ -15,7 +15,7 @@ const ListItem = ({item, deleteProduct}) => (
     <div>
       <div className='list-item-header'>
         <Typography variant='subtitle1' component='h2'>{item.product}</Typography>
-        <Checkbox />
+        <Checkbox checked={item.checked} onClick={() => toggleProduct(item.id)}/>
       </div>
       <div>
         <Typography component='p'>{item.quantity} {item.unit}</Typography>
