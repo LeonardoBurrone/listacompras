@@ -8,8 +8,9 @@ export const Creators = {
     type: Types.FINISH_UPDATE,
   }),
 
-  startUpdate: product => ({
+  startUpdate: (list, product) => ({
     type: Types.START_UPDATE,
     product,
+    list,
   }),
 } 

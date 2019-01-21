@@ -3,7 +3,7 @@ import { v1 as uuid } from 'uuid';
 import { Types } from '../actions/list';
 
 const initialState = {
-  date: '',
+  date: null,
   list: null,
   items: [],
 }

@@ -18,6 +18,7 @@ class CreateList extends Component {
         <Form
           addProduct={this.addProduct}
           updateProduct={this.props.updateProduct}
+          url={this.props.match.params.action}
         />
 
         <div className='list-items-container'>
@@ -26,6 +27,7 @@ class CreateList extends Component {
               <ListItem
                 key={item.id}
                 deleteProduct={this.props.deleteProduct}
+                list={this.props.list.list}
                 toggleProduct={this.props.toggleProduct}
                 item={item} 
               />
