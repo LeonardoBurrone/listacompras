@@ -6,6 +6,7 @@ import './list.css';
 import Form from './form';
 import ListItem from './listItem';
 import { Creators as ListActions } from '../store/actions/list';
+import NewItem from './newItem';
 
 class CreateList extends Component {
   addProduct = (product, list) => {
@@ -32,6 +33,11 @@ class CreateList extends Component {
                 item={item} 
               />
             )
+          }
+
+          {
+            this.props.match.params.action === 'edicao' &&
+            <NewItem />
           }
         </div>
       </div>
