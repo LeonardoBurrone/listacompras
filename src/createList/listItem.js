@@ -8,7 +8,7 @@ import ListItemFooter from './listItemFooter';
 const ListItem = ({item, deleteProduct, list, toggleProduct}) => (
   <CustomCard
     link='#'
-    image='https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/200px-A_small_cup_of_coffee.JPG'
+    image={item.img}
     containerClass='list-item'
     footer={<ListItemFooter deleteProduct={deleteProduct} item={item} list={list} />}
     action={() => toggleProduct(item.id)}

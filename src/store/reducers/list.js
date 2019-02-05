@@ -6,7 +6,7 @@ const initialState = {
   date: null,
   list: null,
   items: [],
-}
+};
 
 export default function list(state=initialState, action) {
   switch (action.type) {
@@ -14,35 +14,47 @@ export default function list(state=initialState, action) {
       return {
         ...state,
         list: action.list,
-        items: [
-          ...state.items,
-          { ...action.product, total: getItemTotal(action.product), id: uuid(), checked: false }
-        ]
       };
 
       case Types.DELETE_PRODUCT:
         return {
           ...state,
           items: state.items.filter(item => item.id !== action.productId)
-        }
+        };
+
+      case Types.GET_IMAGE_SUCCESS:
+      case Types.GET_IMAGE_ERROR:
+        return {
+          ...state,
+          items: [
+            ...state.items,
+            {
+              ...action.product,
+              total: getItemTotal(action.product),
+              id: uuid(),
+              checked: false,
+              img: action.img,
+            }
+          ]
+        };
 
       case Types.NEW_LIST:
         return {
           ...initialState, date: getDate()
-        }
+        };
 
       case Types.TOGGLE_PRODUCT:
         return {
           ...state,
           items: toggleItem(state.items, action.productId)
-        }
+        };
 
       case Types.UPDATE_PRODUCT:
         return {
           ...state,
           list: action.list,
           items: updateProduct(state.items, action.product)
-        }
+        };
     
     default:
       return state;

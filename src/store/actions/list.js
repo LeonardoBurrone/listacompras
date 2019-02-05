@@ -1,6 +1,8 @@
 export const Types = {
   ADD_PRODUCT: 'list/ADD_PRODUCT',
   DELETE_PRODUCT: 'list/DELETE_PRODUCT',
+  GET_IMAGE_ERROR: 'list/GET_IMAGE_ERROR',
+  GET_IMAGE_SUCCESS: 'list/GET_IMAGE_SUCCESS',
   NEW_LIST: 'list/NEW_LIST',
   TOGGLE_PRODUCT: 'list/TOGGLE_PRODUCT',
   UPDATE_PRODUCT: 'list/UPDATE_PRODUCT',
@@ -16,6 +18,18 @@ export const Creators = {
   deleteProduct: productId => ({
     type: Types.DELETE_PRODUCT,
     productId,
+  }),
+
+  getImageError: (product, img) => ({
+    type: Types.GET_IMAGE_ERROR,
+    product,
+    img,
+  }),
+
+  getImageSuccess: (product, img) => ({
+    type: Types.GET_IMAGE_SUCCESS,
+    product,
+    img,
   }),
 
   newList: () => ({
