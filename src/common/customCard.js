@@ -13,7 +13,7 @@ import './customCard.css';
 const CustomCard = (props) => (
   <div className={props.containerClass}>
     <Link to={props.link} >
-      <Card className='card'>
+      <Card className={`card ${props.cardClass ? props.cardClass : ''}`}>
         <CardActionArea className='card-action-area' onClick={props.action}>
           {props.image &&
             <CardMedia
