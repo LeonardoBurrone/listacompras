@@ -9,7 +9,7 @@ import ListItem from './listItem';
 const List = (props) => (
   <CustomCard
     containerClass='list-container'
-    footer={<ListFooter total={props.total} />}
+    footer={<ListFooter  date={props.date} total={props.total} />}
     link='/lista/edicao'
     cardClass={props.openedItems < 1 ? 'closed-list' : 'opened-list'}
   >
